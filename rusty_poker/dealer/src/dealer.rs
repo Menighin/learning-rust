@@ -1,17 +1,17 @@
-use deck::deck;
+use deck::deck::Deck;
 
-pub fn deal_cards() {
+#[derive(Debug)]
+pub struct Dealer {
+    pub deck: Deck
+}
 
-    let mut deck = deck::Deck::new();
+impl Dealer {
+    pub fn new() -> Self {
+        let mut deck = Deck::new();
+        deck.shuffle();
 
-    println!("Before shuffle: {}", deck);
-
-    deck.shuffle();
-
-    println!("After shuffle: {}", deck);
-
-    println!("Dealt: {}", deck.deal().expect("Wat"));
-
-    println!("After deal: {}", deck);
-
+        Dealer {
+            deck
+        }
+    }
 }

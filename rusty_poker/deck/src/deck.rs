@@ -12,6 +12,35 @@ pub enum Card {
 
 impl fmt::Display for Card {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        // let suit: &str;
+        // let value: &str;
+
+        // match self {
+        //     Card::Clubs(v) => { 
+        //         suit = "♣";
+        //         value = v;
+        //     },
+        //     Card::Diamonds(v) => { 
+        //         suit = "♦";
+        //         value = v;
+        //     },
+        //     Card::Hearts(v) => { 
+        //         suit = "♥";
+        //         value = v;
+        //     },
+        //     Card::Spades(v) => { 
+        //         suit = "♠";
+        //         value = v;
+        //     }
+        // };
+
+        // write!(f, "
+        // +-----+
+        // |{}    |
+        // | {: >2}  |
+        // |    {}|
+        // +-----+", suit, value, suit)
+
         match self {
             Card::Clubs(v) => write!(f, "{: >2} ♣", v),
             Card::Diamonds(v) => write!(f, "{: >2} ♦", v),
