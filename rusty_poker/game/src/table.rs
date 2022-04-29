@@ -3,9 +3,11 @@ use deck::deck::Card;
 use dealer::dealer::Dealer;
 
 pub struct Table {
-    players: Vec<Player>,
+    pub players: Vec<Player>,
     pub dealer: Dealer,
     cards: Vec<Card>,
+    cards_flipped: u8,
+    player_start: u8,
     money_sum: u16
 }
 
@@ -24,6 +26,8 @@ impl Table {
             players,
             dealer: Dealer::new(),
             cards: Vec::new(),
+            cards_flipped: 0,
+            player_start: 0,
             money_sum: 0
         }
 
